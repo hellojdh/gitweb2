@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" charset="utf-8">
+    <title>연습해보자</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="base.js"></script>
+</head>
+<body>
+
+<div>
+    <div class="containerEX">
+        <div class="boxEX-mid">
+            <div id="gameField" style="margin-top:118px; margin-left:58px;">
+                <div id="canvasDiv"><canvas id="swingbot"></canvas> </div>
+                <script type="text/javascript" src="jumpbot.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="button"  value="시작" onclick="t();">
+코드를 입력해주세요 :)
+<input type="number" id="codeButton" value="" />
+</body>
+
+<script>
+document.getElementById('canvasDiv').style.visibility = "hidden";
+var bot = new JumperBot();
+bot.init();
+
+window.onload = function (){
+
+    var _width = '1040';
+    var _height = '960';
+    var _left = Math.ceil(( window.screen.width - _width )/2);
+    var _top = Math.ceil(( window.screen.height - _height )/2);
+    resizeTo(_width, _height);
+    moveTo(_left, _top);
+
+};
+
+function restartBtn_click(){
+        if(wheelSpinning == false){
+            start();
+            wheelSpinning=true;
+        }
+        else{
+        }
+    }
+
+function endGame(point){
+    alert(point+"점!!!")
+}
+
+function t(){
+    if(document.getElementById('codeButton').value == 486){
+        document.getElementById('canvasDiv').style.visibility = "visible";
+        start();
+    }else{
+        alert("Code가 다릅니다~!");
+    }
+}
+</script>
+
+</html>
