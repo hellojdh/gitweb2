@@ -2,26 +2,57 @@
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=11" charset="utf-8">
-    <title>연습해보자</title>
+    <title>Platform Game V1</title>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="mq-min.js"></script>
     <script type="text/javascript" src="base.js"></script>
 </head>
 <body>
-
+<!--thead와 tbody는 생략가능-->
 <div>
+    <div id="rank-table" style=" display:flex;">
+        <table style="text-align:center; margin: 0 auto;">
+            <thead>
+                <tr>
+                    <th>Rank.</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="containerEX">
         <div class="boxEX-mid">
-            <div id="gameField" style="margin-top:118px; margin-left:58px;">
+            <div id="gameField" style= margin-left:35px;>
                 <div id="canvasDiv"><canvas id="swingbot"></canvas> </div>
                 <script type="text/javascript" src="jumpbot.js"></script>
             </div>
         </div>
+
     </div>
+    
 </div>
 <input type="button"  value="시작" onclick="t();">
-코드를 입력해주세요 :)
-<input type="number" id="codeButton" value="" />
+닉네임을 입력해주세요 :)
+<input type="text" id="codeButton" value="" />
 </body>
 
 <script>
@@ -48,19 +79,6 @@ function restartBtn_click(){
         else{
         }
     }
-
-function endGame(point){
-    alert(point+"점!!!")
-}
-
-function t(){
-    if(document.getElementById('codeButton').value == 486){
-        document.getElementById('canvasDiv').style.visibility = "visible";
-        start();
-    }else{
-        alert("Code가 다릅니다~!");
-    }
-}
 </script>
 
 </html>
